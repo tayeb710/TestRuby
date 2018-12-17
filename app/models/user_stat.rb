@@ -1,0 +1,6 @@
+class UserStat < ApplicationRecord
+
+
+
+
+end
