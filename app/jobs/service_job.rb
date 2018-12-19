@@ -45,18 +45,4 @@ class ServiceJob < ApplicationJob
     return (apps[nbr])
   end
 
-  def createUserStats(user_id)
-    userStat UserStats.new
-    userStat.user_id = user_id
-    userStat.app_launched = calculLaunched(user_id)
-    userStat.save
-  end
-
-  def calculDate(user_id)
-    user =User.find_by(user_id: user_id)
-    a_date = Time.now
-    b_date = Time.parse(user.timestamp.to_s)
-    puts((a_date - b_date).to_i/ (24 * 60 * 60))
-    return((a_date - b_date).to_i/ (24 * 60 * 60))
-  end
 end
